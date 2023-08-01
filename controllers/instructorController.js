@@ -20,7 +20,7 @@ exports.addInstructor = async (req, res) => {
     if (existingInstructor) {
       return res.status(400).json({ error: "Name already exists" });
     }
-    const newInstructor =  Instructor.create({
+    const newInstructor = new Instructor({
       name:name,
       password:password
     });
